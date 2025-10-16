@@ -1,0 +1,11 @@
+[Unit]
+Description=Homebib
+After=network.target
+
+[Service]
+Type=notify
+ExecStart=/home/glebihan/.nix-profile/bin/bun /home/glebihan/homebib/build/index.js
+
+[Install]
+WantedBy=multi-user.target
+   
