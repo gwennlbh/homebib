@@ -18,9 +18,11 @@
 </header>
 
 <main>
-  {#each await entries() as { id, ...entry } (id)}
-    <Entry {id} {entry} />
-  {/each}
+  {#key path}
+    {#each await entries(path) as { id, ...entry } (id)}
+      <Entry {id} {entry} />
+    {/each}
+  {/key}
 </main>
 
 <style>

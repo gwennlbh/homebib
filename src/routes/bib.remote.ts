@@ -1,10 +1,11 @@
 import { query } from "$app/server";
+import { type as t } from "arktype";
 import type { Hayagriva } from "$lib/hayagriva";
 import { readFile } from "node:fs/promises";
 import YAML from "yaml";
 
-export const entries = query(async () => {
-  const raw = await readFile("/home/glebihan/internships/bib.yaml", {
+export const entries = query(t.string, async (filepath) => {
+  const raw = await readFile(filepath, {
     encoding: "utf8",
   });
 
