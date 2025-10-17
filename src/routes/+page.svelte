@@ -33,7 +33,7 @@
   header input {
     font-size: 1.2em;
     border: none;
-    font-family: monospace;
+    font-family: var(--font-mono);
     border-bottom: 2px solid black;
     width: 500px;
   }

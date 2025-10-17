@@ -42,7 +42,7 @@
   const authors = $derived(
     entry.author
       ? Array.isArray(entry.author)
-        ? entry.author.map(displayPerson).join(", ")
+        ? entry.author.map(displayPerson).join("; ")
         : displayPerson(entry.author)
       : ""
   );
@@ -92,18 +92,30 @@
     border-color: cyan;
   }
 
+
+  h2 {
+    line-height: 1;
+    -webkit-line-clamp: 4;
+    text-wrap: balance;
+    line-clamp: 4;
+  }
+
+  p {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    white-space: nowrap;
+  }
   a * {
     margin: 0;
     padding: 0;
     color: black;
-    font-family: sans-serif;
+    font-family: var(--font-sans);
     text-overflow: ellipsis;
     overflow: hidden;
-    text-wrap: balance;
   }
 
   code {
-    font-family: monospace;
+    font-family: var(--font-mono);
   }
 
   .no-link {
