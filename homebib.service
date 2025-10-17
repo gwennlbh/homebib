@@ -3,8 +3,10 @@ Description=Homebib
 After=network.target
 
 [Service]
-Type=notify
-ExecStart=/home/glebihan/.nix-profile/bin/bun /home/glebihan/homebib/build/index.js
+Type=simple
+User=glebihan
+ExecStart=/home/glebihan/.nix-profile/bin/bun /home/glebihan/homebib/build/index.js &
+ExecStop=/usr/bin/kill `/usr/bin/lsof -i:3000 -a -c bun | /usr/bin/tail -1 | /usr/bin/awk '{ print $2 }'`
 
 [Install]
 WantedBy=multi-user.target
