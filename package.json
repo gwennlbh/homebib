@@ -23,7 +23,7 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
-		"arktype": "^2.1.23",
+		"arktype": "^2.1.25",
 		"yaml": "^2.8.1"
 	}
 }
